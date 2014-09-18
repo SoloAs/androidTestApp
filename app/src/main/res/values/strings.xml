@@ -4,5 +4,10 @@
     <string name="app_name">TestApplication</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_my_second">MySecondActivity</string>
+    <string name="title_activity_johns">JohnsActivity</string>
+    <string name="title_activity_alex">AlexActivity</string>
+    <string name="title_activity_ann">AnnActivity</string>
+    <string name="title_activity_ammy">AmmyActivity</string>
 
 </resources>

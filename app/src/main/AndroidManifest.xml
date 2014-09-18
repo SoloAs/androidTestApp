@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MySecondActivity"
+            android:label="@string/title_activity_my_second" >
+        </activity>
+        <activity
+            android:name=".JohnsActivity"
+            android:label="@string/title_activity_johns" >
+        </activity>
+        <activity
+            android:name=".AlexActivity"
+            android:label="@string/title_activity_alex" >
+        </activity>
+        <activity
+            android:name=".AnnActivity"
+            android:label="@string/title_activity_ann" >
+        </activity>
+        <activity
+            android:name=".AmmyActivity"
+            android:label="@string/title_activity_ammy" >
+        </activity>
     </application>
 
 </manifest>

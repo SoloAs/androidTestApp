@@ -1,18 +1,83 @@
 package com.example.alexander.testapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.*;
 
 
 public class MyActivity extends Activity {
+
+
+    String[] names = { "Alex Alexanders", "John Jones", "Ann Anderson", "Ammy Nobodyknows" };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        android.widget.Button myButton = (android.widget.Button)findViewById(R.id.button);
+        myButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // из MainActivity в RegistrationActivity
+                Intent intent = new Intent(MyActivity.this, MySecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // находим список
+        ListView lvMyAct = (ListView) findViewById(R.id.listView);
+
+        // создаем адаптер
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_activated_1, names);
+
+        // присваиваем адаптер списку
+        lvMyAct.setAdapter(adapter);
+
+
+        lvMyAct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Intent intent = null;
+                switch(position)
+                {
+                    case 0:
+                    {
+                        intent = new Intent(MyActivity.this, AlexActivity.class);
+                        break;
+                    }
+                    case 1:
+                    {
+                        intent = new Intent(MyActivity.this, JohnsActivity.class);
+                        break;
+                    }
+                    case 2:
+                    {
+                        intent = new Intent(MyActivity.this, AnnActivity.class);
+                        break;
+                    }
+                    case 3:
+                    {
+                        intent = new Intent(MyActivity.this, AmmyActivity.class);
+                        break;
+                    }
+                }
+
+                startActivity(intent);
+
+
+            }
+        });
+
+
     }
+
 
 
     @Override
