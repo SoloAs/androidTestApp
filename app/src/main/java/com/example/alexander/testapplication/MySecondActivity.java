@@ -1,9 +1,12 @@
 package com.example.alexander.testapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
 
 
 public class MySecondActivity extends Activity {
@@ -12,7 +15,44 @@ public class MySecondActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_second);
-    }
+
+
+        Intent intent = getIntent();
+        int position = intent.getIntExtra("selectedItem", -1);
+       // int position = Integer.parseInt(getIntent().getExtras().get("selectedItem").toString());
+        TextView tvMySecAct = (TextView)findViewById(R.id.textView);
+
+        switch(position)
+        {
+            case 0:
+            {
+                tvMySecAct.setText("This is Alex Alexanders page");
+                break;
+            }
+            case 1:
+            {
+                tvMySecAct.setText("This is John Johns page");
+                break;
+            }
+            case 2:
+            {
+                tvMySecAct.setText("This is Ammy Andersons page");
+                break;
+            }
+            case 3:
+            {
+                tvMySecAct.setText("This is Ann Nobodyknows page");
+                break;
+            }
+         //   default: {
+          //      tvMySecAct.setText("Page not found");
+           //     break;
+          //  }
+
+            }
+        }
+
+
 
 
     @Override

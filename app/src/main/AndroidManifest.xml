@@ -25,10 +25,6 @@
             android:label="@string/title_activity_johns" >
         </activity>
         <activity
-            android:name=".AlexActivity"
-            android:label="@string/title_activity_alex" >
-        </activity>
-        <activity
             android:name=".AnnActivity"
             android:label="@string/title_activity_ann" >
         </activity>

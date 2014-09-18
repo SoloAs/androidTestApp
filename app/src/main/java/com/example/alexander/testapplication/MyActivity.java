@@ -25,6 +25,7 @@ public class MyActivity extends Activity {
             public void onClick(View v) {
                 // из MainActivity в RegistrationActivity
                 Intent intent = new Intent(MyActivity.this, MySecondActivity.class);
+
                 startActivity(intent);
             }
         });
@@ -44,30 +45,9 @@ public class MyActivity extends Activity {
         lvMyAct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                Intent intent = null;
-                switch(position)
-                {
-                    case 0:
-                    {
-                        intent = new Intent(MyActivity.this, AlexActivity.class);
-                        break;
-                    }
-                    case 1:
-                    {
-                        intent = new Intent(MyActivity.this, JohnsActivity.class);
-                        break;
-                    }
-                    case 2:
-                    {
-                        intent = new Intent(MyActivity.this, AnnActivity.class);
-                        break;
-                    }
-                    case 3:
-                    {
-                        intent = new Intent(MyActivity.this, AmmyActivity.class);
-                        break;
-                    }
-                }
+                Intent intent = new Intent(MyActivity.this, MySecondActivity.class);
+                intent.putExtra("selectedItem", position);
+
 
                 startActivity(intent);
 
